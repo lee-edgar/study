@@ -4,7 +4,7 @@
 
 # PSNR. Peak Signal to Noise Ratio
 
-![스크린샷 2025-06-25 09.42.53.png](/assets/의료인공지능/11_7_Enhancement_metric/스크린샷_2025-06-25_09.42.53.png)
+![스크린샷 2025-06-25 09.42.53.png](/assets/의료인공지능/11_7_Enhancement_metric/image.png)
 
 prediction 영상과, ground truth 영상의 비교를 측정합니다.
 

@@ -20,7 +20,7 @@ t frame = moving image. t+1 frame = fixed image.
 
 similerity에 대한 cost, smooth에 대한 cost 문제 정의를 했는데, 옵티컬 플로우에서도 비슷한 코스트가 보통 정의 됩니다. ***바로 이 코스를 옵티마이제이션 해주는 각 점의 디스플레이스먼트를 찾아아***.
 
-![스크린샷 2025-07-05 21.00.21.png](/assets/의료인공지능/14_1_Optical_flow_FlowNet/스크린샷_2025-07-05_21.00.21.png)
+![스크린샷 2025-07-05 21.00.21.png](/assets/의료인공지능/14_1_Optical_flow_FlowNet/image_1.png)
 
 픽셀 단위 t 프레임에서 (x,y)가 이동을 하면 t+1 이미지에서는 x+u만큼 이동했다고 볼 수 있고, y 같은 경우는 v 만큼 이동했다고 생각을 해보면, 이 두 영상 간에 유사도를 구하게 됨.
 
@@ -30,7 +30,7 @@ u와 v. 즉, 픽셀에서 x 방향으로 얼만큼 이동했고, y방향으로 �
 
 # FlowNet
 
-![스크린샷 2025-07-05 21.17.00.png](/assets/의료인공지능/14_1_Optical_flow_FlowNet/스크린샷_2025-07-05_21.17.00.png)
+![스크린샷 2025-07-05 21.17.00.png](/assets/의료인공지능/14_1_Optical_flow_FlowNet/image_2.png)
 
 t프레임에서의 영상과 t+1프레임 영상을 concatnation시켜 input으로. 만약 RGB라고하면, t에서의 3채널, t+1에서의 3채널. 총 6개의 널을 가진 영상이 들어가게 됨. 
 
@@ -49,7 +49,7 @@ conv→conv→conv→pooling→pooling→.. Refine-ment 단계에서 플로우�
 
 # 다른 방식으로 제안 된 FlowNet
 
-![스크린샷 2025-07-05 22.39.18.png](/assets/의료인공지능/14_1_Optical_flow_FlowNet/스크린샷_2025-07-05_22.39.18.png)
+![스크린샷 2025-07-05 22.39.18.png](/assets/의료인공지능/14_1_Optical_flow_FlowNet/image_3.png)
 
 t와 t+1의 concatnation하는 구조 외에도, concatnation을 사용하지 않고, 각각의 패스로 진행시키고 나중에 concation시키는 FlowNet구조도 제안 됨
 

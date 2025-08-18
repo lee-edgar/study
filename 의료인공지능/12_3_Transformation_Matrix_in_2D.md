@@ -28,7 +28,7 @@
 
 변환이 어디까지, 어느 정도 까지 진행되었는지에 따라서, 트랜스포메이션들을 아래와 같이 나눌 수 있겠습니다.
 
-![스크린샷 2025-06-25 15.56.59.png](/assets/의료인공지능/12_3_Transformation_Matrix_in_2D/스크린샷_2025-06-25_15.56.59.png)
+![스크린샷 2025-06-25 15.56.59.png](/assets/의료인공지능/12_3_Transformation_Matrix_in_2D/image.png)
 
 1. Rigid transformation : rotation과 translation만 고려.
 2. Similarity transformation : rotation + translation + scaling
@@ -42,7 +42,7 @@
 
 ### Transformation
 
-![스크린샷 2025-06-25 17.52.36.png](/assets/의료인공지능/12_3_Transformation_Matrix_in_2D/스크린샷_2025-06-25_17.52.36.png)
+![스크린샷 2025-06-25 17.52.36.png](/assets/의료인공지능/12_3_Transformation_Matrix_in_2D/image_2.png)
 
 1. translation
     - x방향으로 t만큼, tx만큼 이동을 했고, y방향으로 ty만큼 이동했음을 위 수식으로 표현
@@ -65,19 +65,19 @@
 
 ### rotation과 translation을 고려하는 rigid변환.
 
-![스크린샷 2025-06-25 18.03.17.png](/assets/의료인공지능/12_3_Transformation_Matrix_in_2D/스크린샷_2025-06-25_18.03.17.png)
+![스크린샷 2025-06-25 18.03.17.png](/assets/의료인공지능/12_3_Transformation_Matrix_in_2D/image_3.png)
 
 - (x’, y’) = (cos$\theta$, -sin$\theta$, sin$\theta$,cos$\theta$)(x,y) + (tx, ty)의 값들을 찾아주게 되면 rigid 변환 식을 구할 수 있습니다.
 
 ### 추가로, 여기에 Similarity transformation을 적용해본다면,
 
-![스크린샷 2025-06-25 18.12.12.png](/assets/의료인공지능/12_3_Transformation_Matrix_in_2D/스크린샷_2025-06-25_18.12.12.png)
+![스크린샷 2025-06-25 18.12.12.png](/assets/의료인공지능/12_3_Transformation_Matrix_in_2D/image_4.png)
 
 Similarity transformation는 rotation + translation + scaling의 조합이므로, scaling = (s,0,0,s)식이 고려가 되기 때문에, (s,0,0,s) matrix를 곱해주게 됩니다. 
 
 좀 더 정리된 식으로 보자면 아래와 같습니다.
 
-![스크린샷 2025-06-25 18.13.08.png](/assets/의료인공지능/12_3_Transformation_Matrix_in_2D/스크린샷_2025-06-25_18.13.08.png)
+![스크린샷 2025-06-25 18.13.08.png](/assets/의료인공지능/12_3_Transformation_Matrix_in_2D/image_5.png)
 
 각각의 $\theta$값들과 tx, ty값들을 찾게 되면, similarity transformation의 파라미터 값들을 찾을 수 있습니다.
 
@@ -87,7 +87,7 @@ Similarity transformation는 rotation + translation + scaling의 조합이므로
 
 matrix를 다시 표현 해보자면 (x’, y’)은 아래와 같습니다. 
 
-![스크린샷 2025-06-25 20.05.57.png](/assets/의료인공지능/12_3_Transformation_Matrix_in_2D/스크린샷_2025-06-25_20.05.57.png)
+![스크린샷 2025-06-25 20.05.57.png](/assets/의료인공지능/12_3_Transformation_Matrix_in_2D/image_6.png)
 
 위 슬라이드 내용에 의해서
 
@@ -105,7 +105,7 @@ matrix를 다시 표현 해보자면 (x’, y’)은 아래와 같습니다.
 
 x’ = ax - by + c,     y’ = bx + ay + d 식을 아래와 같이 아핀 변환을 통해 표현 할 수 있습니다.
 
-![스크린샷 2025-06-25 20.21.52.png](/assets/의료인공지능/12_3_Transformation_Matrix_in_2D/스크린샷_2025-06-25_20.21.52.png)
+![스크린샷 2025-06-25 20.21.52.png](/assets/의료인공지능/12_3_Transformation_Matrix_in_2D/image_7.png)
 
 - x’ 해석 : ax, by순서이기에, a, b값을 제외하고,  x, -y가 들어오고, c값이 있으니 1, d 값이 없으니 0
 - y’해석 : bx + ay의 순서로 따지면, ay + by가 될 것이기때문에, y +x가 들어오고, c값0,  d값 1
@@ -130,7 +130,7 @@ x’ = ax - by + c,     y’ = bx + ay + d 식을 아래와 같이 아핀 변환
 
 찾아야 하는 값들이 여러개로 증가 했기에 아래 식처럼 추가 되겠습니다.  (*두 점에 대한 네개의 식)
 
-![스크린샷 2025-06-25 20.35.31.png](/assets/의료인공지능/12_3_Transformation_Matrix_in_2D/스크린샷_2025-06-25_20.35.31.png)
+![스크린샷 2025-06-25 20.35.31.png](/assets/의료인공지능/12_3_Transformation_Matrix_in_2D/image_8.png)
 
 4개의 식 결과로 4x4 matrix가 되고, vector도 (x1’, y1’, x2’, y2’)과 같은 형태가 도리 것이고, 이 식을 만족하는 a, b, c, d값을 구할 수 있습니다.
 
@@ -142,12 +142,12 @@ A가 matrix, x는 우리가 구해야하는 파라미터, B가 우측의 벡터�
 
 A의 역함수가 존재하면, A역함수 양 옆에 곱을해서, 아래와 같이 풀어 낼 수 있습니다. (A의 역함수를 통해 x = A-1 * B)
 
-![스크린샷 2025-06-25 20.50.42.png](/assets/의료인공지능/12_3_Transformation_Matrix_in_2D/스크린샷_2025-06-25_20.50.42.png)
+![스크린샷 2025-06-25 20.50.42.png](/assets/의료인공지능/12_3_Transformation_Matrix_in_2D/image_9.png)
 
 그런데, 매칭 점들이 많아지게 되면 A값이 정방행렬이 아니게 되고 역행렬을 구할 수 없게 되는데, 이러한 문제를 풀기 위한 방식이 Pseudo Inverse입니다. Pseudo Inverse로 풀게 되면, 이 x 값을 구한다고 한들, 모든 A,B에 이 식이 만족하게 할 수는 없지만, 근사적으로 이 두 값을 비슷하게끔 만들어주는 X를 찾아주게 되는 것입니다.
 
 - ***Pesudo-Inverse 설명 과정에서 아핀변환을 사용한 이유?***
     
-    ![스크린샷 2025-06-26 21.37.30.png](/assets/의료인공지능/12_3_Transformation_Matrix_in_2D/스크린샷_2025-06-26_21.37.30.png)
+    ![스크린샷 2025-06-26 21.37.30.png](/assets/의료인공지능/12_3_Transformation_Matrix_in_2D/image_10.png)
     
-    ![스크린샷 2025-06-26 21.37.41.png](/assets/의료인공지능/12_3_Transformation_Matrix_in_2D/스크린샷_2025-06-26_21.37.41.png)
+    ![스크린샷 2025-06-26 21.37.41.png](/assets/의료인공지능/12_3_Transformation_Matrix_in_2D/image_11.png)

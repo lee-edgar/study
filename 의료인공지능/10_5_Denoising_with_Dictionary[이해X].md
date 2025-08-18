@@ -23,13 +23,13 @@ weight(alpha)가 sparse하다는 가정으로 x는 smooth한 영상이 만들어
 
 간단한 영상으로 알아보자.
 
-![스크린샷 2025-06-18 16.50.45.png](/assets/의료인공지능/10_5_Denoising_with_Dictionary[이해X]/스크린샷_2025-06-18_16.50.45.png)
+![스크린샷 2025-06-18 16.50.45.png](/assets/의료인공지능/10_5_Denoising_with_Dictionary[이해X]/image_3.png)
 
 타겟 영상 y와 여러개의 딕셔너리(d1, d2,d3,d4,d5)가 있습니다.
 
 딕셔너리 중에서 y값과 가장 코릴레이션이 높은, 비슷한 패치들을 고를 수 있습니다.
 
-![스크린샷 2025-06-18 18.10.18.png](/assets/의료인공지능/10_5_Denoising_with_Dictionary[이해X]/스크린샷_2025-06-18_18.10.18.png)
+![스크린샷 2025-06-18 18.10.18.png](/assets/의료인공지능/10_5_Denoising_with_Dictionary[이해X]/image_4.png)
 
 d2가 가장 비슷한 패치로 뽑혔다고 가정해본다면,
 
@@ -39,6 +39,6 @@ resdual의 최소화 하는 값. 즉, alpha(어떠한값)의 최소 값을 찾�
 
 다시 resdual(d2), 최소화하고 남은 값에 대해서 가장 코릴레이션이 높고, d2를 제외한 d1, d3, d4, d5에 대해서 가까운 값을 찾게 됩니다.(d5)
 
-![스크린샷 2025-06-18 18.16.40.png](/assets/의료인공지능/10_5_Denoising_with_Dictionary[이해X]/스크린샷_2025-06-18_18.16.40.png)
+![스크린샷 2025-06-18 18.16.40.png](/assets/의료인공지능/10_5_Denoising_with_Dictionary[이해X]/image_5.png)
 
 resiudal(d5)에 대해서 residual의 최소회 하는 값을 찾게 됩니다. 이러한 방식으로 alpha값들을 구하고, 딕셔너리와 alpha값들의 연산을 통해 X값을 얻게 됩니다. 여기서의 X는 y값과 같지 않습니다. 최소화 하는 값(residaul)을 가지는 과정에서 다양한 smooth한 패치들이 연산되기 때문입니다.

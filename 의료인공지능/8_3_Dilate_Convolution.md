@@ -13,7 +13,7 @@ Dilate Convolution을 사용하면 ?
 
 - Receptive Filed를 넓히면서도 Downsampling을 하지 않기 때문에, 연산량 증가 없이 더 넓은 문맥 정보를 얻는 동시에 공간 해상도(위치 정보)도 그대로 유지 할 수 있음.
 
-![스크린샷 2025-06-04 15.36.24.png](/assets/의료인공지능/8_3_Dilate_Convolution/스크린샷_2025-06-04_15.36.24.png)
+![스크린샷 2025-06-04 15.36.24.png](/assets/의료인공지능/8_3_Dilate_Convolution/image_2.png)
 
 Dilated Convolution : 
 
@@ -31,14 +31,14 @@ w1*x1 + w2*x3 + x3*x5 … 의 수식을 가지게 됨.
 2. 그 결과로 clear한 prediction map을 얻을 수 있습니다. 
 3. 이후 prediction결과와 y값과의 비교를 통해 의network의 parameter들을 update하게 됩니다.
 
-![스크린샷 2025-06-04 15.54.58.png](/assets/의료인공지능/8_3_Dilate_Convolution/스크린샷_2025-06-04_15.54.58.png)
+![스크린샷 2025-06-04 15.54.58.png](/assets/의료인공지능/8_3_Dilate_Convolution/image_3.png)
 
 1. FCN, U-Net에서 확인 했듯이 pooling을 여러번 사용한 다음에 다시 upsampling을 해주는 방식 대신에 
 2. Dilated Convolution을 이용하게 되면 upsampling, downsampling을 할 필요 없이 해상도를 유지 할 수 있습니다.
     - 해상도를 유지하는데 실제 학습해주는 filter의 내부의 parameter의 수는 변함이 없이 receptive field가 넓어질 뿐입니다. 이러한 구조를 DeepLab이라고 합니다.
     - Atrous convolution의 rate값들을 변경하여 receptive field를 변경 할 수 있습니다.
         
-        ![스크린샷 2025-06-04 16.33.30.png](/assets/의료인공지능/8_3_Dilate_Convolution/스크린샷_2025-06-04_16.33.30.png)
+        ![스크린샷 2025-06-04 16.33.30.png](/assets/의료인공지능/8_3_Dilate_Convolution/image_4.png)
         
         예를 들어, rate를 3으로 하여, 빈공간 빈공간 필터값 빈공간 빈공간 필터값 .. 
         

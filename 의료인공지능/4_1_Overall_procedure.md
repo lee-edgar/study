@@ -16,11 +16,11 @@
 
 # 4.1. Overall procedure
 
-![스크린샷 2025-05-21 19.36.35.png](/assets/의료인공지능/4_1_Overall_procedure/스크린샷_2025-05-21_19.36.35.png)
+![스크린샷 2025-05-21 19.36.35.png](/assets/의료인공지능/4_1_Overall_procedure/image_1.png)
 
 ### Feature Extractor를 활용한 Classififer
 
-![스크린샷 2025-05-21 19.51.22.png](/assets/의료인공지능/4_1_Overall_procedure/스크린샷_2025-05-21_19.51.22.png)
+![스크린샷 2025-05-21 19.51.22.png](/assets/의료인공지능/4_1_Overall_procedure/image_3.png)
 
 classifier를 위해 feature extractor로 특징을 뽑아냄.
 
@@ -30,11 +30,11 @@ classifier를 위해 feature extractor로 특징을 뽑아냄.
 
 ### 딥러닝 모델을 활용한 prediction
 
-![스크린샷 2025-05-21 20.02.56.png](/assets/의료인공지능/4_1_Overall_procedure/스크린샷_2025-05-21_20.02.56.png)
+![스크린샷 2025-05-21 20.02.56.png](/assets/의료인공지능/4_1_Overall_procedure/image_4.png)
 
 굳이 feature extractor를 하지 않고 End to End 구조로 영상을 넣어서 CNN을 활용해 바로 prediction 할 수 있는 방법도 존재함.
 
-![스크린샷 2025-05-21 19.36.35.png](/assets/의료인공지능/4_1_Overall_procedure/스크린샷_2025-05-21_19.36.35_1.png)
+![스크린샷 2025-05-21 19.36.35.png](/assets/의료인공지능/4_1_Overall_procedure/image_2.png)
 
 위 방식들이(feature extractor → prediction, cnn→ prediction) 기본적인 structure이며, 영상 혹은 의료영상 등은 모두 이러한 기본적인 구조를 따르는 경우가 많음.
 
@@ -63,7 +63,7 @@ Overfitting : Training set에서의 loss는 감소하지만, Validation Set에�
 
 ### Cross Validation
 
-![스크린샷 2025-05-21 20.55.13.png](/assets/의료인공지능/4_1_Overall_procedure/스크린샷_2025-05-21_20.55.13.png)
+![스크린샷 2025-05-21 20.55.13.png](/assets/의료인공지능/4_1_Overall_procedure/image_5.png)
 
 - K-Fold : K개로 구획을 나눠 K번의 학습을 진행하는데 K번째 학습에서 K번째의data set을 validation으로 사용하며, 제일 좋은 결과를 채택하여 사용함.
 - Linear Regression, Neural Network, CNN 등 여러 모델들에 대해서 각각 K-Fold를 적용하여 결과를 각각 내어 가장 좋은 모델을 선택하여 사용하기도 함.
@@ -71,7 +71,7 @@ Overfitting : Training set에서의 loss는 감소하지만, Validation Set에�
 
 # 4.4. Transfer Learning
 
-![스크린샷 2025-05-21 22.54.14.png](/assets/의료인공지능/4_1_Overall_procedure/스크린샷_2025-05-21_22.54.14.png)
+![스크린샷 2025-05-21 22.54.14.png](/assets/의료인공지능/4_1_Overall_procedure/image_6.png)
 
 Transfer Learning은 Data가 부족한 Deep Learning에서 사용하는 방법임.
 
@@ -83,7 +83,7 @@ Transfer Learning은 Data가 부족한 Deep Learning에서 사용하는 방법�
 
 학습용 의료 데이터의 수는 꽤나 제한적이기에 학습 데이터 양을 증가하여 보강 하기 위한 방법으로 data augmentation을 사용하게 됨.
 
-![스크린샷 2025-05-22 19.25.46.png](/assets/의료인공지능/4_1_Overall_procedure/스크린샷_2025-05-22_19.25.46.png)
+![스크린샷 2025-05-22 19.25.46.png](/assets/의료인공지능/4_1_Overall_procedure/image_7.png)
 
 - Mirroring : 좌우 반전
 - Rotation : 회전
@@ -100,7 +100,7 @@ Transfer Learning은 Data가 부족한 Deep Learning에서 사용하는 방법�
 
 분류 모델 평가에 대한 방법.
 
-![스크린샷 2025-05-22 19.43.04.png](/assets/의료인공지능/4_1_Overall_procedure/스크린샷_2025-05-22_19.43.04.png)
+![스크린샷 2025-05-22 19.43.04.png](/assets/의료인공지능/4_1_Overall_procedure/image_8.png)
 
 좌측 그림 : real negative와 real postive를 가지고 classifier를 학습 할 수 있습니다.
 
@@ -123,11 +123,11 @@ prediction 결과가 맞았는지 틀렸는지는 앞 부분에 정의 됨(True/
 - ex) 파란색 부분은 real negative →true negative 라고 표기.
 - ex) False Negative : Postive 영역인데, Negative로 인식했으니 → False Negative 표기
 
-![스크린샷 2025-05-22 21.02.54.png](/assets/의료인공지능/4_1_Overall_procedure/스크린샷_2025-05-22_21.02.54.png)
+![스크린샷 2025-05-22 21.02.54.png](/assets/의료인공지능/4_1_Overall_procedure/image_12.png)
 
 위 Confusion Matrix를 통해 Real과 Prediction간의 관계를 확인할 수 있습니다.
 
-![스크린샷 2025-05-22 19.43.31.png](/assets/의료인공지능/4_1_Overall_procedure/스크린샷_2025-05-22_19.43.31.png)
+![스크린샷 2025-05-22 19.43.31.png](/assets/의료인공지능/4_1_Overall_procedure/image_9.png)
 
 1. Sensitivity(True Postive rate. recall)
     - False Negative가 낮아야 Sensitivity가 높아지게됨.
@@ -140,9 +140,9 @@ prediction 결과가 맞았는지 틀렸는지는 앞 부분에 정의 됨(True/
 
 상황ex) 의료분야의 경우 Normal를 cancer로 진단 하는 것보다 cancer가 Normal로 진단하는 것이 훨씬 위험하기에 Cancer 환자를 잡기 위한 방향으로 진행하기에 accuracy를 사용하게 되면 문제가 되기에 Sensitivity(recall)이 100%가 되도록 해야함.
 
-![스크린샷 2025-05-22 19.43.40.png](/assets/의료인공지능/4_1_Overall_procedure/스크린샷_2025-05-22_19.43.40.png)
+![스크린샷 2025-05-22 19.43.40.png](/assets/의료인공지능/4_1_Overall_procedure/image_10.png)
 
-![스크린샷 2025-05-22 19.43.31.png](/assets/의료인공지능/4_1_Overall_procedure/스크린샷_2025-05-22_19.43.31.png)
+![스크린샷 2025-05-22 19.43.31.png](/assets/의료인공지능/4_1_Overall_procedure/image_9.png)
 
 1. ROC Curve(Reciver Operating Characteristics Curve)
 - x축 : 1-TNRate(Specificity), y축: TPRate(recall). 즉, x축은 이진 분류기에 의해 결정된 score가 표시된 것으로 생각 할 수 있습니다.
@@ -160,15 +160,15 @@ prediction 결과가 맞았는지 틀렸는지는 앞 부분에 정의 됨(True/
 
 위 설명을 다른 형태로 추가설명을 해보자면,
 
-![스크린샷 2025-05-22 21.41.21.png](/assets/의료인공지능/4_1_Overall_procedure/스크린샷_2025-05-22_21.41.21.png)
+![스크린샷 2025-05-22 21.41.21.png](/assets/의료인공지능/4_1_Overall_procedure/image_13.png)
 
        classifier = 0.5
 
-![스크린샷 2025-05-22 21.41.43.png](/assets/의료인공지능/4_1_Overall_procedure/스크린샷_2025-05-22_21.41.43.png)
+![스크린샷 2025-05-22 21.41.43.png](/assets/의료인공지능/4_1_Overall_procedure/image_14.png)
 
      classifier = 0.7
 
-![스크린샷 2025-05-22 21.41.54.png](/assets/의료인공지능/4_1_Overall_procedure/스크린샷_2025-05-22_21.41.54.png)
+![스크린샷 2025-05-22 21.41.54.png](/assets/의료인공지능/4_1_Overall_procedure/image_15.png)
 
      classifier = 0.9
 
@@ -197,7 +197,7 @@ classifier 값을 클래스 분류를 위한 threshold라고 할 수 있으며 T
 
 빠른 질병 선별(Screening) 단계에서는 threshold를 0.1처럼 낮춰 민감하게 탐지하는 것이 중요하며, 이는 높은 Recall을 확보하여 환자를 놓치지 않기 위함입니다. 반면, 최종 진단이나 수술 여부 판단 단계에서는 threshold를 0.9처럼 높게 설정하여 Precision을 최대화하고, 오진을 최소화하는 전략이 적절합니다.
 
-![스크린샷 2025-05-22 19.43.50.png](/assets/의료인공지능/4_1_Overall_procedure/스크린샷_2025-05-22_19.43.50.png)
+![스크린샷 2025-05-22 19.43.50.png](/assets/의료인공지능/4_1_Overall_procedure/image_11.png)
 
 F1 Score는 Harmonic mean of recall and precision이라고, recall과 precision의 조화 평균을 나타냅니다.
 
@@ -206,14 +206,14 @@ F1 Score는 Harmonic mean of recall and precision이라고, recall과 precision�
 
 # 4.7. Evaluation of classification model(Multi-label)
 
-![스크린샷 2025-05-23 19.11.33.png](/assets/의료인공지능/4_1_Overall_procedure/스크린샷_2025-05-23_19.11.33.png)
+![스크린샷 2025-05-23 19.11.33.png](/assets/의료인공지능/4_1_Overall_procedure/image_16.png)
 
 1. TP : 실제 클래스가 A인데, A로 예측한 것. 실제 값을 실제 값이라고 예측 한 것
 2. FP : 실제 클래스가 B, C, D인데 A로 예측한 것. 실제 값이 아닌데 실제 값으로 예측 한 것.
 3. FN : 실제 클래스가 A인데, B, C, D로 예측 한것. 실제 값이 아닌데 실제 값이 아니라고 예측 한 것
 4. TN : 실제 클래스가 B,C,D인데 B,C,D로 예측한 것. 실제 값을 실제값이 아니라고 예측 한 것.
 
-![스크린샷 2025-05-23 19.52.26.png](/assets/의료인공지능/4_1_Overall_procedure/스크린샷_2025-05-23_19.52.26.png)
+![스크린샷 2025-05-23 19.52.26.png](/assets/의료인공지능/4_1_Overall_procedure/image_17.png)
 
 전체에 대해에 대해서 우측 보다 전체에 대해서 A 예측을 많이 맞추진 못했기 때문에 accuracy가 0.64로 보이는 모습.
 

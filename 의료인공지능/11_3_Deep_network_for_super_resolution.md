@@ -4,13 +4,13 @@
 
 이 연구는 서울대학교 연구팀에서 제안됨
 
-![스크린샷 2025-06-20 22.15.10.png](/assets/의료인공지능/11_3_Deep_network_for_super_resolution/스크린샷_2025-06-20_22.15.10.png)
+![스크린샷 2025-06-20 22.15.10.png](/assets/의료인공지능/11_3_Deep_network_for_super_resolution/image_1.png)
 
 SRCNN과 비슷한 구조를 가지고 있습니다.
 
 처음에는 작은 크기의 LR에서 인터폴레이션을 진행하여 같은 사이즈의 LR영상과 HR영상을 생성하고, 다수의(20개의) 컨볼루션 레이어를 사용합니다
 
-![스크린샷 2025-06-20 22.50.50.png](/assets/의료인공지능/11_3_Deep_network_for_super_resolution/스크린샷_2025-06-20_22.50.50.png)
+![스크린샷 2025-06-20 22.50.50.png](/assets/의료인공지능/11_3_Deep_network_for_super_resolution/image_2.png)
 
 ### 1. resiudal
 
@@ -32,11 +32,11 @@ LR에서 바로 HR 영상을 만드는 것보다는, 중간에 residual을 이�
 
 learning rate가 너무 작으면 수렴 속도 ↓, 너무 높으면 발산 확률 ↑ 의 문제가 발생하게 되는데, 이때 gradient clipping를 사용할 수 있습니다
 
-![스크린샷 2025-06-20 22.52.19.png](/assets/의료인공지능/11_3_Deep_network_for_super_resolution/스크린샷_2025-06-20_22.52.19.png)
+![스크린샷 2025-06-20 22.52.19.png](/assets/의료인공지능/11_3_Deep_network_for_super_resolution/image_3.png)
 
 - 해당 점에서의 gradient를 구하게 되면, gradient는 별로 크지 않습니다
 
-![스크린샷 2025-06-20 22.55.00.png](/assets/의료인공지능/11_3_Deep_network_for_super_resolution/스크린샷_2025-06-20_22.55.00.png)
+![스크린샷 2025-06-20 22.55.00.png](/assets/의료인공지능/11_3_Deep_network_for_super_resolution/image_4.png)
 
 - 두 번째 포인트에서의 gradient를 구하게 되면 gradient가 상당이 크게 됩니다. 이 상황에서 알파 값도 크다면, 꽤나 큰 간격으로 점프 될 가능성이 있습니다.
 - 이와 같은 문제를 방지하기 위해 gradient clipping 사용.
@@ -50,14 +50,14 @@ SRCNN의 경우 알파 값이 작기에, 수렴하는 속도가 느려 학습이
 
 # Laplacian Pyramid Network
 
-![스크린샷 2025-06-20 23.07.41.png](/assets/의료인공지능/11_3_Deep_network_for_super_resolution/스크린샷_2025-06-20_23.07.41.png)
+![스크린샷 2025-06-20 23.07.41.png](/assets/의료인공지능/11_3_Deep_network_for_super_resolution/image_5.png)
 
                                              녹색 화살표 : upsamlpling, 붉은색 화살표 : CNN
 
 딥한 네트워크를 사용하면서, 처음부터 업샘플링을 진행하는게 아니라 업샘플링 하는 네트워크를 넣어주어 단계적으로 업샘플링을 진행합니다. 또한, 업샘플링 네트워크 사이에 CNN 네트워크를 다수 사용합니다.
 ***원하는 최종 해상도까지 단계적(pyramid)으로 CNN → upsampling의 반복***
 
-![스크린샷 2025-06-20 23.12.39.png](/assets/의료인공지능/11_3_Deep_network_for_super_resolution/스크린샷_2025-06-20_23.12.39.png)
+![스크린샷 2025-06-20 23.12.39.png](/assets/의료인공지능/11_3_Deep_network_for_super_resolution/image_6.png)
 
 1. **각 스테이지의 업샘플 출력**
     - 단계별로 업샘플된 영상(아래쪽)과,

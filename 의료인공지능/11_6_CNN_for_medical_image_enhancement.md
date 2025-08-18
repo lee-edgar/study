@@ -2,7 +2,7 @@
 
 Medical Image Super-Resolution
 
-![스크린샷 2025-06-24 18.16.56.png](/assets/의료인공지능/11_6_CNN_for_medical_image_enhancement/스크린샷_2025-06-24_18.16.56.png)
+![스크린샷 2025-06-24 18.16.56.png](/assets/의료인공지능/11_6_CNN_for_medical_image_enhancement/image_1.png)
 
 - MRI Super-resolution
     - 고해상도의 영상을 얻기 위해 스캐너에 상당히 오랜 시간동안 들어가 있어야합니다.
@@ -17,7 +17,7 @@ Medical Image Super-Resolution
 
 Medical Image Synthesis(의료 영상 합성)
 
-![스크린샷 2025-06-24 18.43.49.png](/assets/의료인공지능/11_6_CNN_for_medical_image_enhancement/스크린샷_2025-06-24_18.43.49.png)
+![스크린샷 2025-06-24 18.43.49.png](/assets/의료인공지능/11_6_CNN_for_medical_image_enhancement/image_2.png)
 
 - MRI - PET generation
     - MRI, PET 두가지를 같이 찍으면 스트럭쳐한 정보를 얻을 수 있습니다. 그 다음 신진대사 정보를 얻을 수 있으며, 실제 PET영상 같은 경우 아무래도 찍는데 번거로운 점이  꽤나 많기 때문에 mri와 pet 페어한 세트로 모아서 둘 사이의 관계를 찾아줄 수 있는 네트워크 학습을 하는 방식을 사용합니다. 추후에 mri만 들어오더라도 pet 영상을 잘 generation해줄 수 있어 유용합니다.

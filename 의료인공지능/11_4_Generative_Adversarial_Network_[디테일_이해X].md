@@ -1,6 +1,6 @@
 # 11.4. Generative Adversarial Network [디테일 이해X]
 
-![스크린샷 2025-06-23 17.39.45.png](/assets/의료인공지능/11_4_Generative_Adversarial_Network_[디테일_이해X]/스크린샷_2025-06-23_17.39.45.png)
+![스크린샷 2025-06-23 17.39.45.png](/assets/의료인공지능/11_4_Generative_Adversarial_Network_[디테일_이해X]/image.png)
 
 1. Generator(생성자, 하단부)
     - “진짜 같은 가짜”를 만드는 역할
@@ -80,7 +80,7 @@
 
 # Conditional GAN, cGAN
 
-![스크린샷 2025-06-23 20.01.28.png](/assets/의료인공지능/11_4_Generative_Adversarial_Network_[디테일_이해X]/스크린샷_2025-06-23_20.01.28.png)
+![스크린샷 2025-06-23 20.01.28.png](/assets/의료인공지능/11_4_Generative_Adversarial_Network_[디테일_이해X]/image_2.png)
 
 Pix2Pix라고 알려진 Conditional Gan(cGAN)은 스케치 ↔실제 사진 같은 쌍(pair)이 있는 데이터를 한 세트로 묶어 학습합니다.
 

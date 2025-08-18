@@ -11,11 +11,11 @@ Registration을 두 가지 기법으로 나눠볼 수 있습니다.
 
 이전 강의에서 NCC, mutaul information을 통해서 patch들 간 유사도를 비교하는 방법에 대해 살펴보았습니다. → 이는 intensity 기반의 Registration 기법을 보통 많이 사용
 
-![스크린샷 2025-06-30 18.04.00.png](/assets/의료인공지능/13_1_Registration_types/스크린샷_2025-06-30_18.04.00.png)
+![스크린샷 2025-06-30 18.04.00.png](/assets/의료인공지능/13_1_Registration_types/image.png)
 
 intensity 기반의 registration을 할때, 일정한 간격의 컨트롤 포인트 설정을 하고, 각 컨트롤 포인트별 대응점(correspondence)을 찾아주게 됩니다.
 
-![스크린샷 2025-06-30 18.12.58.png](/assets/의료인공지능/13_1_Registration_types/스크린샷_2025-06-30_18.12.58.png)
+![스크린샷 2025-06-30 18.12.58.png](/assets/의료인공지능/13_1_Registration_types/image_1.png)
 
 특정 패치를 선택하고, fixed 영상에서 유사도가 높은 부분을 찾아 줄 수 있겠습니다. 우측(fixed)영상에서 translation, 로테이션 등의 여러 기법을 고려해 유사도가 높은 부분을 찾아낼 수 있습니다.
 
@@ -23,7 +23,7 @@ intensity 기반의 registration을 할때, 일정한 간격의 컨트롤 포인
 
 Feature Based Registration
 
-![스크린샷 2025-06-30 18.56.33.png](/assets/의료인공지능/13_1_Registration_types/스크린샷_2025-06-30_18.56.33.png)
+![스크린샷 2025-06-30 18.56.33.png](/assets/의료인공지능/13_1_Registration_types/image_2.png)
 
 (상단의 일정한 패턴의 포인트는 intensity 기반, 하단의 x표시로 되어 feature 추출 표시가 feature based registration)
 

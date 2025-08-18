@@ -2,7 +2,7 @@
 
 살짝 복습.
 
-![스크린샷 2025-07-04 23.15.08.png](/assets/의료인공지능/13_5_Nonrigid_Registration_via_B-spline/스크린샷_2025-07-04_23.15.08.png)
+![스크린샷 2025-07-04 23.15.08.png](/assets/의료인공지능/13_5_Nonrigid_Registration_via_B-spline/image.png)
 
 각각의 포인트마다 interploation을 하게 되면 computation이 높다.
 
@@ -14,19 +14,19 @@
 
 Spline based Registration
 
-![스크린샷 2025-07-04 23.24.17.png](/assets/의료인공지능/13_5_Nonrigid_Registration_via_B-spline/스크린샷_2025-07-04_23.24.17.png)
+![스크린샷 2025-07-04 23.24.17.png](/assets/의료인공지능/13_5_Nonrigid_Registration_via_B-spline/image_2.png)
 
 좌측의 moving을 바탕으로 fixed image의 매칭점들을 찾을 수 있음
 
-![스크린샷 2025-07-04 23.25.57.png](/assets/의료인공지능/13_5_Nonrigid_Registration_via_B-spline/스크린샷_2025-07-04_23.25.57.png)
+![스크린샷 2025-07-04 23.25.57.png](/assets/의료인공지능/13_5_Nonrigid_Registration_via_B-spline/image_3.png)
 
 moving 점들이 x,y축으로 이동된 x값을 찾아 줄 수 있습니다. 찾아군 값을 바탕으로 이 식을 define을 합니다.
 
-![스크린샷 2025-07-04 23.27.40.png](/assets/의료인공지능/13_5_Nonrigid_Registration_via_B-spline/스크린샷_2025-07-04_23.27.40.png)
+![스크린샷 2025-07-04 23.27.40.png](/assets/의료인공지능/13_5_Nonrigid_Registration_via_B-spline/image_4.png)
 
 define하는 과정에서 위 moving의 네 점으로 디파인을 하는게 아닙니다. 스플라인 기반 기법의 경우 컨트롤 포인트 주변의 16개의 포인트를 이용해 디포메이션 하여 사각형 내의 어떤 점들의 변화를 예측 하게 됩니다.
 
-![스크린샷 2025-07-04 23.29.34.png](/assets/의료인공지능/13_5_Nonrigid_Registration_via_B-spline/스크린샷_2025-07-04_23.29.34.png)
+![스크린샷 2025-07-04 23.29.34.png](/assets/의료인공지능/13_5_Nonrigid_Registration_via_B-spline/image_5.png)
 
 사각형 내의 어떤 점들 사이에 위치한 중간의 점들의 이동은 이미지 처럼 될 것입니다
 

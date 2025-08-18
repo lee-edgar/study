@@ -2,7 +2,7 @@
 
 대응점을 정확히 찾아주지 않더라고 정합을 할 수 있는 유용한 기법에 대해서.
 
-![스크린샷 2025-07-01 10.38.58.png](/assets/의료인공지능/13_2_Registration_using_main_axis/스크린샷_2025-07-01_10.38.58.png)
+![스크린샷 2025-07-01 10.38.58.png](/assets/의료인공지능/13_2_Registration_using_main_axis/image.png)
 
 피쳐를 추출 할 수 있는 여러가지 방법 중에서 가장 간단하게 해볼수 있는 방법인 thresholding을 활용하면, 영상에서의 밝은 부분들이 추출 될 것이고, 어두운 부분은 추출이 되지 않을 수 있습니다. 
 
@@ -13,7 +13,7 @@
 → 이때 가장 쉽게 정합을 해볼수 있는 방법이 이런 포인트들에 어떤 유의미한 축을 찾아내고.
 예를 들어 가장 베리에이션이 큰 장축을 찾아내면 아래 영상과 같은 축을 찾을 수 있습니다.
 
-![스크린샷 2025-07-01 10.44.15.png](/assets/의료인공지능/13_2_Registration_using_main_axis/스크린샷_2025-07-01_10.44.15.png)
+![스크린샷 2025-07-01 10.44.15.png](/assets/의료인공지능/13_2_Registration_using_main_axis/image_2.png)
 
                                               (가장 베리에이션이 큰 장축을 통해 얻은 축)
 
@@ -21,7 +21,7 @@
 
 이런 축을 찾아 주기 위한 방법으로 PCA(Principal component analyses)프린피설 컨퍼넌트 어널러시스를 사용 할 수 있습니다.
 
-![스크린샷 2025-07-01 11.16.16.png](/assets/의료인공지능/13_2_Registration_using_main_axis/스크린샷_2025-07-01_11.16.16.png)
+![스크린샷 2025-07-01 11.16.16.png](/assets/의료인공지능/13_2_Registration_using_main_axis/image_3.png)
 
 - 점과 중심선 간의 거리가 최소가 되게끔 하는 축을 찾아주는 방식.
 - 점 들의 코베리언스 메트릭스를 구해주고, 코베리언스 매트릭스의 아이겐 벡터와 아이겐 벨류를 구해주게 됩니다. 이후 아이겐 벨류가 제일 큰 값일 때, 이 아이겐 벡터가 주성분. 즉, 이 축이 되게 됩니다
@@ -32,11 +32,11 @@
 - translation은 두 영상의 중삼 축
 - Moving image를 Fixed image로 가져와서, 두 영상의 중심 축으로 정합하는 translation으로 정합을 수행 할 수 있고, 그 이후 로테이션이 얼마나 되는지를 알면 정합을 수행 할  있음.
 
-![스크린샷 2025-07-01 11.17.25.png](/assets/의료인공지능/13_2_Registration_using_main_axis/스크린샷_2025-07-01_11.17.25.png)
+![스크린샷 2025-07-01 11.17.25.png](/assets/의료인공지능/13_2_Registration_using_main_axis/image_4.png)
 
 Moving에서 fixed로 옮기면서, 중심 축 기준 translation
 
-![스크린샷 2025-07-01 11.17.53.png](/assets/의료인공지능/13_2_Registration_using_main_axis/스크린샷_2025-07-01_11.17.53.png)
+![스크린샷 2025-07-01 11.17.53.png](/assets/의료인공지능/13_2_Registration_using_main_axis/image_5.png)
 
 translation 정합 → rotation 정합
 
@@ -44,6 +44,6 @@ translation 정합 → rotation 정합
 
 세그멘테이션 → 피쳐 분포 → PCA로 축 추출 → 센터 맞추기 → 회전 정합
 
-![스크린샷 2025-07-01 15.37.29.png](/assets/의료인공지능/13_2_Registration_using_main_axis/스크린샷_2025-07-01_15.37.29.png)
+![스크린샷 2025-07-01 15.37.29.png](/assets/의료인공지능/13_2_Registration_using_main_axis/image_7.png)
 
-![스크린샷 2025-07-01 15.37.47.png](/assets/의료인공지능/13_2_Registration_using_main_axis/스크린샷_2025-07-01_15.37.47.png)
+![스크린샷 2025-07-01 15.37.47.png](/assets/의료인공지능/13_2_Registration_using_main_axis/image_6.png)

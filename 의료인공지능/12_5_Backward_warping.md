@@ -1,10 +1,10 @@
 # 12.5. Backward warping
 
-![스크린샷 2025-06-28 10.58.03.png](/assets/의료인공지능/12_5_Backward_warping/스크린샷_2025-06-28_10.58.03.png)
+![스크린샷 2025-06-28 10.58.03.png](/assets/의료인공지능/12_5_Backward_warping/image.png)
 
-![스크린샷 2025-06-28 10.58.40.png](/assets/의료인공지능/12_5_Backward_warping/스크린샷_2025-06-28_10.58.40.png)
+![스크린샷 2025-06-28 10.58.40.png](/assets/의료인공지능/12_5_Backward_warping/image_2.png)
 
-![스크린샷 2025-06-28 11.23.08.png](/assets/의료인공지능/12_5_Backward_warping/스크린샷_2025-06-28_11.23.08.png)
+![스크린샷 2025-06-28 11.23.08.png](/assets/의료인공지능/12_5_Backward_warping/image_3.png)
 
 - 2x2 는 선형 변환(회전, 스케일, 전단) 만 다루기에, 이동에 대한 부분은 덧셈이 추가적으로 필요합니다.
     - 호모지니어스 좌표(homogeneous coordinates) : 2D 점(x,y)를 (x, y, 1)로 확장하여, 3x3 행렬로 만들어 “선형 + 이동”을 모두 처리.
@@ -54,7 +54,7 @@ Backward warping(역방향 워핑)은 이미지 변환 기술 중 하나로, 출
 - 파노라마 스티칭(panorama stitching)
 - 이미지 렌더링(rendering)
 
-![스크린샷 2025-06-28 20.23.46.png](/assets/의료인공지능/12_5_Backward_warping/스크린샷_2025-06-28_20.23.46.png)
+![스크린샷 2025-06-28 20.23.46.png](/assets/의료인공지능/12_5_Backward_warping/image_4.png)
 
 forward warping : 특정 영역 (3,1)좌표에 hole 문제가 발생함
 
