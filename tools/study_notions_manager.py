@@ -119,7 +119,7 @@ def _rewrite_links_folder_and_filenames(md_text: str, old_dir: str, new_dir: str
         if path.startswith(old_dir) or path.startswith(old_dir + "/"):
             fname = Path(path).name
             new_fname = fname_map.get(fname, normalize_empty(fname))
-            return f"![{alt}](/study/assets/{category}/{new_dir}/{new_fname})"
+            return f"![{alt}](/assets/{category}/{new_dir}/{new_fname})"
         return m.group(0)
 
     return pattern.sub(repl, md_text)

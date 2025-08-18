@@ -1,6 +1,6 @@
 # 3.1. Property of Deep Nerual Network
 
-![image.png](/assets/의료인공지능/3_1_Property_of_Deep_Nerual_Network/image.png)
+![image.png](assets/의료인공지능/3_1_Property_of_Deep_Nerual_Network/image.png)
 
                                          (숫자7 영상에 대한 각row를 dense하게 하여 sigmiod→predict)
 
