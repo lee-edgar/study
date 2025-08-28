@@ -8,29 +8,29 @@ morphological processing을 통해서 해당 노이즈들을 쉽게 처리 할 �
 
 ### Dilation
 
-![image.png](6%203%20Morphological%20processing(dilation,%20ersion)%2020034bdbf13d80bc8a10edbfe94ae182/image%201.png)
+![image.png](6%203%20Morphological%20processing(dilation,%20ersion)%2020034bdbf13d80bc8a10edbfe94ae182/image_1.png)
 
 Dilation(팽창) : 구조 요소(structuring element, kernel, mask)와 입력 이미지가 곂치는 부분이 하나라도 있을 경우 kernel의 중심 위치에 해당하는 픽셀을 1로 설정함.
 
-![image.png](6%203%20Morphological%20processing(dilation,%20ersion)%2020034bdbf13d80bc8a10edbfe94ae182/image%202.png)
+![image.png](6%203%20Morphological%20processing(dilation,%20ersion)%2020034bdbf13d80bc8a10edbfe94ae182/image_2.png)
 
  structer element를 정의하여 아래 작업을 수행.
 
-![image.png](6%203%20Morphological%20processing(dilation,%20ersion)%2020034bdbf13d80bc8a10edbfe94ae182/image%203.png)
+![image.png](6%203%20Morphological%20processing(dilation,%20ersion)%2020034bdbf13d80bc8a10edbfe94ae182/image_3.png)
 
-![image.png](6%203%20Morphological%20processing(dilation,%20ersion)%2020034bdbf13d80bc8a10edbfe94ae182/image%204.png)
+![image.png](6%203%20Morphological%20processing(dilation,%20ersion)%2020034bdbf13d80bc8a10edbfe94ae182/image_4.png)
 
 Structuring element의 1인 부분이 foreground(객체)와 곂치는지 확인하며 sliding window 방식으로 이미지를 쓸어갑니다.
 
 오른쪽 그림에서는 structuring element의 아래와 오른쪽이 froegorund와 곂치므로 해당 위치의 element 중심에 해당하는 픽셀을 1로 채워줍니다.(* 아래, 오른쪽의 foreground가 이미 1이라서 채우진 않음)
 
-![image.png](6%203%20Morphological%20processing(dilation,%20ersion)%2020034bdbf13d80bc8a10edbfe94ae182/image%201.png)
+![image.png](6%203%20Morphological%20processing(dilation,%20ersion)%2020034bdbf13d80bc8a10edbfe94ae182/image_1.png)
 
 Structuring element를 다르게 구성 할 수도 있으며, 전체 sliding window방식으로 쓸어주면 위와 같이 물체가 dilation된 결과물을 볼 수 있음.
 
 ### Erosion
 
-![image.png](6%203%20Morphological%20processing(dilation,%20ersion)%2020034bdbf13d80bc8a10edbfe94ae182/image%205.png)
+![image.png](6%203%20Morphological%20processing(dilation,%20ersion)%2020034bdbf13d80bc8a10edbfe94ae182/image_5.png)
 
 Erosion은 dilation과 반대되는 개념으로, foreground가 아닌 background에 적용하게 되며, foreground 부분은 지워지지 않고 background 부분만 지워지는 효과를 볼 수 있음.
 
@@ -49,15 +49,15 @@ Erosion과 Dilation을 적절히 사용해야 함.
 
 ### 의료 영상에서의 ersion, diation 효과 확인
 
-![image.png](6%203%20Morphological%20processing(dilation,%20ersion)%2020034bdbf13d80bc8a10edbfe94ae182/image%206.png)
+![image.png](6%203%20Morphological%20processing(dilation,%20ersion)%2020034bdbf13d80bc8a10edbfe94ae182/image_6.png)
 
 1. thresholding
 
-![image.png](6%203%20Morphological%20processing(dilation,%20ersion)%2020034bdbf13d80bc8a10edbfe94ae182/image%207.png)
+![image.png](6%203%20Morphological%20processing(dilation,%20ersion)%2020034bdbf13d80bc8a10edbfe94ae182/image_7.png)
 
 1. erosion을 통해 noise 제거 및 아래 객체의 축소
 
-![image.png](6%203%20Morphological%20processing(dilation,%20ersion)%2020034bdbf13d80bc8a10edbfe94ae182/image%208.png)
+![image.png](6%203%20Morphological%20processing(dilation,%20ersion)%2020034bdbf13d80bc8a10edbfe94ae182/image_8.png)
 
 1. 다시 dilation을 통해 아래 객체를 팽창시키며 hole 채우기
 2. hole 제거 했으니 원본 유지를 위해 다시 ersion 진행.

@@ -8,13 +8,13 @@ PCA는 데이터의 차원을 줄일 때 많이 사용 됩니다.
 
 2차원 x1축, x2축이 1차원 z1축으로 차원을 줄일 수 있습니다.
 
-![image.png](7%204%20Principle%20Component%20Analysis(PCA)%20NP%2020234bdbf13d8012b6f9d7e571f461e8/image%201.png)
+![image.png](7%204%20Principle%20Component%20Analysis(PCA)%20NP%2020234bdbf13d8012b6f9d7e571f461e8/image_1.png)
 
 2차원의 x2축을 삭제하고, 각 포인트들을 x1축으로 투영 할 수 있습니다. 파랜색 X 포인트와 검은색 X포인트의 간격이 매우 좁은 걸 볼 수 있습니다. 
 
 PCA목표는 위와 같이 데이터를 한 축의 차원으로 투영 하였을때 분산을 Maximize하는 축을 찾는 것 입니다. 단순히 축에 대한 투영 뿐만 아니라 벡터에 대한 Maximizer하는 분포를 찾는 것이 일반적입니다.
 
-![image.png](7%204%20Principle%20Component%20Analysis(PCA)%20NP%2020234bdbf13d8012b6f9d7e571f461e8/image%202.png)
+![image.png](7%204%20Principle%20Component%20Analysis(PCA)%20NP%2020234bdbf13d8012b6f9d7e571f461e8/image_2.png)
 
 각 포인트들을 단순히 x1축에 올려서 보기보단, 포인트 그대로 대각선으로 이어지는 축을 기점으로 찾는것이 더 효율적입니다.
 
@@ -48,7 +48,7 @@ PCA는 비지도 학습에 속합니다. 비지도 학습은 레이블이나 목
 
 ### 차원 축소
 
-![image.png](7%204%20Principle%20Component%20Analysis(PCA)%20NP%2020234bdbf13d8012b6f9d7e571f461e8/image%203.png)
+![image.png](7%204%20Principle%20Component%20Analysis(PCA)%20NP%2020234bdbf13d8012b6f9d7e571f461e8/image_3.png)
 
 ### 차원 축소(Dimensionality Reduction)
 
@@ -75,13 +75,13 @@ PCA는 ***데이터의 주요 패턴을 캡처해 차원을 줄이***는 분석 
 
 PCA 과정
 
-![image.png](7%204%20Principle%20Component%20Analysis(PCA)%20NP%2020234bdbf13d8012b6f9d7e571f461e8/image%204.png)
+![image.png](7%204%20Principle%20Component%20Analysis(PCA)%20NP%2020234bdbf13d8012b6f9d7e571f461e8/image_4.png)
 
 PCA를 수행할 때는 데이터의 구조를 가장 잘 반영하는 기저를 찾는 것이 중요함. 이를 ***최적의 기저(Optimal Bases)***라고 부르며, PCA에서는 자동으로 분산이 최대가 되는 방향, 즉 데이터 간의 중복성이 가장 적은 방향을 최적의 기저로 찾아냄. 
 
 만약, 중복성이 높은 기저를 선택하면 비슷한 정보를 중복하여 포함하게 되므로, PCA의 주 목적인 정보 압축과 패턴 추출에 방해가 됨.
 
-![image.png](7%204%20Principle%20Component%20Analysis(PCA)%20NP%2020234bdbf13d8012b6f9d7e571f461e8/image%205.png)
+![image.png](7%204%20Principle%20Component%20Analysis(PCA)%20NP%2020234bdbf13d8012b6f9d7e571f461e8/image_5.png)
 
 이때 기저들은 서로 수직이어야 함.
 
@@ -92,22 +92,22 @@ PCA를 수행할 때는 데이터의 구조를 가장 잘 반영하는 기저를
     - 공분산 행렬에 decomposition을 적용해 고유값(Eigenvalue)과 고유벡터(Eigenvector)를 구함. 이때, Singular Value Decomposition(SVD)를 사용하는데 이는 선형대수에서 사용하는 기법으로 다른 matrix행과 열을 사용해 정방행렬로 만들어거 값을 구하는데 사용하는 기법임.
     - 2D의 경우 eigenvalue와 eigenvector가 각 2개씩 나오게 되며, eigenvector로 얻어낸 2개의 축을 이용해 1D로 Proejction.
         
-        ![image.png](7%204%20Principle%20Component%20Analysis(PCA)%20NP%2020234bdbf13d8012b6f9d7e571f461e8/image%206.png)
+        ![image.png](7%204%20Principle%20Component%20Analysis(PCA)%20NP%2020234bdbf13d8012b6f9d7e571f461e8/image_6.png)
         
         - 람다1의 방향은 빨간 화살표
         - 람다2의 방향은 파란 화살표
         
-        ![image.png](7%204%20Principle%20Component%20Analysis(PCA)%20NP%2020234bdbf13d8012b6f9d7e571f461e8/image%207.png)
+        ![image.png](7%204%20Principle%20Component%20Analysis(PCA)%20NP%2020234bdbf13d8012b6f9d7e571f461e8/image_7.png)
         
         - 만약 람다2를 고려하지 않는다면, 람다1의 방향 화살표로 이동하게 됨.
         - 추후 람다1에 대해서 복원을 한다면 붉은색의 람다1 방향의 라인에 투영된 결과가 얻어지게 됨.
 5. 주성분 선택 : 가장 큰 고유값을 갖는 고유벡터로부터 원하는 수의 주성분 선택
 
-![image.png](7%204%20Principle%20Component%20Analysis(PCA)%20NP%2020234bdbf13d8012b6f9d7e571f461e8/image%208.png)
+![image.png](7%204%20Principle%20Component%20Analysis(PCA)%20NP%2020234bdbf13d8012b6f9d7e571f461e8/image_8.png)
 
 추후 eigenvector를 하나만 뽑아서 계산하면 아래와 같이 차원 축소 된 모습을 볼 수 있으며, 차원 축소 된 값을 다시 복원을 할 수 있으나, 완벽하게 X값으로 복원이 되지는 않고 축 위의 X로 복원이 됨.
 
-![image.png](7%204%20Principle%20Component%20Analysis(PCA)%20NP%2020234bdbf13d8012b6f9d7e571f461e8/image%209.png)
+![image.png](7%204%20Principle%20Component%20Analysis(PCA)%20NP%2020234bdbf13d8012b6f9d7e571f461e8/image_9.png)
 
 ### **활용 예시**
 
